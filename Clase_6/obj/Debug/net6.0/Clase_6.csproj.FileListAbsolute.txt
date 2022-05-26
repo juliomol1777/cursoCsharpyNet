@@ -1,0 +1,15 @@
+/home/julio/Escritorio/Curso_C#/Clase_6/bin/Debug/net6.0/Clase_6
+/home/julio/Escritorio/Curso_C#/Clase_6/bin/Debug/net6.0/Clase_6.deps.json
+/home/julio/Escritorio/Curso_C#/Clase_6/bin/Debug/net6.0/Clase_6.runtimeconfig.json
+/home/julio/Escritorio/Curso_C#/Clase_6/bin/Debug/net6.0/Clase_6.dll
+/home/julio/Escritorio/Curso_C#/Clase_6/bin/Debug/net6.0/Clase_6.pdb
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.csproj.AssemblyReference.cache
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.GeneratedMSBuildEditorConfig.editorconfig
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.AssemblyInfoInputs.cache
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.AssemblyInfo.cs
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.csproj.CoreCompileInputs.cache
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.dll
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/refint/Clase_6.dll
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.pdb
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/Clase_6.genruntimeconfig.cache
+/home/julio/Escritorio/Curso_C#/Clase_6/obj/Debug/net6.0/ref/Clase_6.dll
