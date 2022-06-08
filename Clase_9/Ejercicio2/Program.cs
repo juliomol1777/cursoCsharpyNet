@@ -1,0 +1,85 @@
+﻿
+int columnas = 9;
+int filas = 3;
+int numerosxFila = 5; //maximo de numeros por fila
+Random aleatorio = new Random();
+
+int [,] carton = new int [columnas, filas];
+int [] posicion = new int [numerosxFila]; //columnas que ocupara el numero en la fila 1-9
+
+for (int i = 0; i < filas; i++)
+{
+    //determino que posicion(columna de 1-9) ocuparan los 5 numeros aleatorios
+    for (int k = 0; k < numerosxFila; k++)
+    {
+        posicion [k] = aleatorio.Next(9);
+
+        //como las 5 posiciones deben ser diferentes, recorro a medida que voy llenando
+        //posiciones y comparo con las posiciones ya cargadas en el vector
+        //, si el numero de pisicion existe asigno otro aleatorio
+
+        for (int l = 0; l < k; l++)
+        {
+            while(posicion [k] == posicion [l])
+            {
+              posicion [k] = aleatorio.Next(9);  
+            }
+        }
+    }
+    for (int j = 0; j < columnas; j++)
+    {
+        int rango = (j+1)*10; // rangos 0-9, 10-19 etc
+        int numeroRango = aleatorio.Next(rango);
+        
+        while(numeroRango == 0)
+        {
+            numeroRango = aleatorio.Next(rango);
+        }
+        if(numeroRango<rango-10)
+        {
+            //como el numero aleatorio tiene que estar dentro de un rango 10-19 por
+            //ejemplo. valuo si el numero aleatorio es menor al valor minimo del rango
+            // en ese caso lo situo en el valor minimo y le sumo un aleatorio (0-9)
+            var num = aleatorio.Next(10);            
+            numeroRango += (rango-numeroRango-10+ num);
+        }
+        Console.Write(numeroRango + " ");
+        //coloco cada numero aleatorio en la posicion correspondiente, para eso comparo
+        // el numero de columna j con el valor aleatorio de columna que tiene en vctor posicion
+        for (int m = 0; m < posicion.Length; m++)
+        {
+            if (posicion[m]== j)
+            {
+                carton[posicion[m], i] = numeroRango;
+            }
+        }
+    }
+}
+
+Console.WriteLine("");
+
+for (int i = 0; i < filas; i++)
+{
+    for (int j = 0; j < columnas; j++)
+    {
+        Console.Write(carton[j,i] + " ");
+    }
+    Console.WriteLine("");
+}
+
+
+/*
+Con los conocimientos vistos hasta ahora en clase realizar un programa que haga lo siguiente:
+
+Generar un programa que cree un cartón de bingo aleatorio y lo muestre por pantalla
+
+1)    Cartón de 3 filas por 9 columnas
+2)    El cartón debe tener 15 números y 12 espacios en blanco
+3)    Cada fila debe tener 5 números
+4)    Cada columna debe tener 1 o 2 números
+5)    Ningún número puede repetirse
+6)    La primer columna contiene los números del 1 al 9, la segunda del 10 al 19, 
+        la tercera del 20 al 29, 
+        así sucesivamente hasta la última columna la cual contiene del 80 al 90
+7)    Mostrar el carton por pantalla
+*/
