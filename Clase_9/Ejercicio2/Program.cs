@@ -5,10 +5,34 @@ int numerosxFila = 5; //maximo de numeros por fila
 Random aleatorio = new Random();
 
 int [,] carton = new int [columnas, filas];
-int [] posicion = new int [numerosxFila]; //columnas que ocupara el numero en la fila 1-9
+int [] posicion = new int [numerosxFila];
+int [] cantxcolumna = new int [columnas]; //columnas que ocupara el numero en la fila 1-9
 
 for (int i = 0; i < filas; i++)
 {
+    if (i==2)
+        {
+            for (int r = 0; r < columnas; r++)
+            {
+                int cont = 0;
+                for (int p = 0; p < filas-1; p++)
+                {
+                    if (carton[r, p] == 0)
+                    {
+                        cont++;
+                    }
+                    
+                }
+                cantxcolumna[r] = cont;
+            }
+            /*
+            Console.Write(" ");
+            for (int q = 0; q < columnas; q++)
+            {
+                Console.Write(cantxcolumna[q] + " ");
+            }
+            */
+        }
     //determino que posicion(columna de 1-9) ocuparan los 5 numeros aleatorios
     for (int k = 0; k < numerosxFila; k++)
     {
@@ -48,6 +72,10 @@ for (int i = 0; i < filas; i++)
         // el numero de columna j con el valor aleatorio de columna que tiene en vctor posicion
         for (int m = 0; m < posicion.Length; m++)
         {
+            if (i==2 && cantxcolumna[m]== 0)
+            {
+                carton[posicion[m], i] = numeroRango;
+            }            
             if (posicion[m]== j)
             {
                 carton[posicion[m], i] = numeroRango;
@@ -55,6 +83,23 @@ for (int i = 0; i < filas; i++)
         }
     }
 }
+
+/*
+for (int i = 0; i < columnas; i++)
+{
+    var cont = 0;
+    for (int j = 0; j < filas; j++)
+    {
+        if (carton[i,j] == 0)
+        {
+            cont++;
+        }
+    }
+    if (cont == 0 || cont == 3)
+    {
+        //si en una columna no hay numeros o hay 3 numeros debo cambiar
+    }
+}*/
 
 Console.WriteLine("");
 
