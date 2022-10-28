@@ -1,0 +1,30 @@
+/*
+Usando los comandos vistos en clase seguir los siguientes pasos:
+1. Crear una base de datos con nombre "CursoNet"
+2. Dentro de la base generada crear una tabla llamada "Instructores" que contenga los campos:
+Id: clave principal auto incremental
+Nombre
+Apellido
+3. Cargar en la tabla todos los instructores de este curso
+4. Consultar la lista completa de instructores.
+*/
+
+1.
+CREATE DATABASE CursoNet;
+
+2.
+USE Clase24;
+USE MASTER;
+CREATE TABLE Instructores(
+    Id INT IDENTITY(1,1)  PRIMARY KEY;
+    nombre VARCHAR(50) NOT NULL;
+    apellido VARCHAR(50) NOT NULL;
+);
+
+3.
+INSERT INTO Instructores (nombre,apellido) 
+VALUES('Joaquin','Mateos'),('Ezequiel','Etchecoin'),
+('Eugenio','Serrano'), ('Ruben','Benegas');
+
+4.
+SELECT Id,nombre,apellido FROM Instructores;
